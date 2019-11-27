@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <title>A simple clock</title>
+  <style>
+    #output {
+      font: bold 50px monospace; 
+      color: lightgray; 
+      display: inline-block; 
+      border-radius: 5px; 
+      padding: 2px 5px;
+      background-color: rgba(0,0,0,0.5);
+    }
+  </style>
+</head>
+
+<body translate="no" >
+  <div id="output"></div>
+
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.18.1/moment.min.js'></script>
+  <script>
+    var output = document.getElementById("output");
+
+    var c;
+    setInterval(
+    c = function() {
+        output.innerText = moment().format('MMM Do YYYY, h:mm:ss A');
+    }, 1000);
+    c();
+  </script>
+</body>
+</html>
